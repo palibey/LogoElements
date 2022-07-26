@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@lit-labs/react": "^1.0.7",
+    "@logo-elements/accordion": "^1.2.0",
+    "@logo-elements/app-layout": "^1.2.0",
+    "@logo-elements/icon": "^1.2.0",
+    "@logo-elements/tabs": "^1.2.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,8 +17,10 @@
     "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.7.4",
+    "wc-react": "^0.5.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
