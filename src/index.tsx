@@ -27,6 +27,10 @@ import '@logo-elements/date-picker';
 import '@logo-elements/date-time-picker';
 import '@logo-elements/details';
 import '@logo-elements/vertical-layout';
+import '@logo-elements/dialog';
+import '@logo-elements/email-field';
+
+
 
 
 
@@ -61,6 +65,8 @@ class App extends React.Component {
                         <Route path="/date-picker" element={<DatePickerComp/>}/>
                         <Route path="/date-time-picker" element={<DateTimePickerComp/>}/>
                         <Route path="/details" element={<DetailsComp/>}/>
+                        <Route path="/dialog" element={<DialogComp/>}/>
+                        <Route path="/email-field" element={<EmailFieldComp/>}/>
                     </Routes>
                 </div>
             </BrowserRouter>
@@ -123,6 +129,12 @@ function Home() {
                 </li>
                 <li>
                     <Link to='/details'>Details</Link>
+                </li>
+                <li>
+                    <Link to='/dialog'>Dialog</Link>
+                </li>
+                <li>
+                    <Link to='/email-field'>Email Field</Link>
                 </li>
             </ol>
         </div>
@@ -460,7 +472,7 @@ function ContextMenuComp() {
                 </li>
             </ul>
             <hr/>
-            <ContextMenu onClick={() => consoleMenuLogger} id='context-menu'  items={[
+            <ContextMenu user-select={() => consoleMenuLogger} id='context-menu'  items={[
                 {
                     text: 'Menu Item 1', theme: 'primary', children:
                         [
@@ -582,6 +594,48 @@ function DetailsComp() {
                     <span>(501) 555-9128</span>
                 </VerticalLayout>
             </Details>
+        </div>
+    );
+}
+function openDialog() {
+    const theDialog = document.querySelector('logo-elements-dialog');
+    if (theDialog != null){
+        theDialog['opened'] = true;
+        theDialog['renderer'] = function (root , theDialog) {
+            root['textContent'] = 'Hello Patates';
+        }
+    }
+}
+const Dialog = logoWebWrapper('logo-elements-dialog');
+function DialogComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <Dialog id='dialog' resizeable={true} draggable={true}></Dialog>
+            <Button onclick={() => openDialog()}>Show dialog</Button>
+        </div>
+    );
+    
+}
+
+const EmailField = logoWebWrapper('logo-elements-email-field');
+function EmailFieldComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <EmailField label="Email address" name="email" value="julia.scheider@email.com" error-message="Please enter a valid email address" clear-button-visible></EmailField>
+
+            <EmailField label="Email address" name="email" value="This is not an email" error-message="Please enter a valid email address" clear-button-visible invalid></EmailField>
         </div>
     );
 }
