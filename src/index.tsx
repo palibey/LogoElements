@@ -21,6 +21,7 @@ import '@logo-elements/checkbox-group';
 import '@logo-elements/combo-box';
 import '@logo-elements/confirm-dialog';
 import '@logo-elements/context-menu/logo-elements-context-menu';
+import '@logo-elements/cookie-consent';
 import '@logo-elements/crud';
 import '@logo-elements/custom-field';
 import '@logo-elements/date-picker';
@@ -29,11 +30,17 @@ import '@logo-elements/details';
 import '@logo-elements/vertical-layout';
 import '@logo-elements/dialog';
 import '@logo-elements/email-field';
-
-
-
-
-
+import '@logo-elements/grid';
+import '@vaadin/vaadin-grid/vaadin-grid-selection-column';
+import '@vaadin/vaadin-grid-pro/vaadin-grid-pro-edit-column';
+import '@logo-elements/grid-pro/logo-elements-grid-pro';
+import '@logo-elements/icon/logo-elements-icon.js';
+import '@logo-elements/integer-field';
+import '@logo-elements/item';
+import '@logo-elements/list-box';
+import '@logo-elements/login/logo-elements-login';
+import '@logo-elements/menu-bar';
+import '@logo-elements/message-input';
 
 
 
@@ -60,6 +67,7 @@ class App extends React.Component {
                         <Route path="/combobox" element={<ComboBoxComp/>}/>
                         <Route path="/confirm-dialog" element={<ConfirmDialogComp/>}/>
                         <Route path="/context-menu" element={<ContextMenuComp/>}/>
+                        <Route path="/cookie-consent" element={<CookieConsentComp/>}/>
                         <Route path="/CRUD" element={<CRUDComp/>}/>
                         <Route path="/custom-field" element={<CustomFieldComp/>}/>
                         <Route path="/date-picker" element={<DatePickerComp/>}/>
@@ -67,6 +75,17 @@ class App extends React.Component {
                         <Route path="/details" element={<DetailsComp/>}/>
                         <Route path="/dialog" element={<DialogComp/>}/>
                         <Route path="/email-field" element={<EmailFieldComp/>}/>
+                        <Route path="/grid" element={<GridComp/>}/>
+                        <Route path="/grid-pro" element={<GridProComp/>}/>
+                        <Route path="/horizontal-layout" element={<HorizontalLayoutComp/>}/>
+                        <Route path="/icon" element={<IconComp/>}/>
+                        <Route path="/integer-field" element={<IntegerFieldComp/>}/>
+                        <Route path="/item" element={<ItemComp/>}/>
+                        <Route path="/list-box" element={<ListBoxComp/>}/>
+                        <Route path="/login" element={<LoginComp/>}/>
+                        <Route path="/menu-bar" element={<MenuBarComp/>}/>
+                        <Route path="/message-input" element={<MessageInputComp/>}/>
+
                     </Routes>
                 </div>
             </BrowserRouter>
@@ -116,6 +135,9 @@ function Home() {
                     <Link to='/context-menu'>Context Menu</Link>
                 </li>
                 <li>
+                    <Link to='/cookie-consent'>Cookie Consent</Link>
+                </li>
+                <li>
                     <Link to='/CRUD'>CRUD</Link>
                 </li>
                 <li>
@@ -135,6 +157,36 @@ function Home() {
                 </li>
                 <li>
                     <Link to='/email-field'>Email Field</Link>
+                </li>
+                <li>
+                    <Link to='/grid'>Grid</Link>
+                </li>
+                <li>
+                    <Link to='/grid-pro'>Grid Pro</Link>
+                </li>
+                <li>
+                    <Link to='/horizontal-layout'>Horizontal Layout</Link>
+                </li>
+                <li>
+                    <Link to='/icon'>Icon</Link>
+                </li>
+                <li>
+                    <Link to='/integer-field'>Integer Field</Link>
+                </li>
+                <li>
+                    <Link to='/item'>Item</Link>
+                </li>
+                <li>
+                    <Link to='/list-box'>List Box</Link>
+                </li>
+                <li>
+                    <Link to='/login'>Login</Link>
+                </li>
+                <li>
+                    <Link to='/menu-bar'>Menu Bar</Link>
+                </li>
+                <li>
+                    <Link to='/message-input'>Message Input</Link>
                 </li>
             </ol>
         </div>
@@ -498,6 +550,23 @@ function consoleMenuLogger() {
     console.log('here 1')
 }
 
+const CookieConsent = logoWebWrapper('logo-elements-cookie-consent');
+function CookieConsentComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <CookieConsent learn-more-link="https://mysite.com/cookies.html"></CookieConsent>
+        </div>
+
+    );
+}
+
+
 const CRUD = logoWebWrapper('logo-elements-crud')
 function CRUDComp() {
     return(
@@ -639,4 +708,286 @@ function EmailFieldComp() {
         </div>
     );
 }
+function fetchGridItems() {
+    fetch('https://demo.vaadin.com/demo-data/1.0/people?count=50')
+        .then((res) => res.json())
+        .then((json) => {
+            const row = document.querySelectorAll('vaadin-logo-grid');
+            const pro = document.querySelector('vaadin-grid-pro');
+            if (row != null)
+                for (let i = 0; i < row.length; i++) {
+                    row[i]['items'] = json.result;
+                }
+            if (pro != null)
+                pro['items'] = json.result;
+        });
+
+}
+
+function gridButtonAdder() {
+    const editCol = document.querySelector('#gridActions');
+    if (editCol != null)
+        editCol['renderer'] = function(root, editCol) {
+            const editBtn = document.createElement('logo-elements-button');
+            editBtn.setAttribute('theme', 'primary inline');
+            editBtn.textContent = 'Edit';
+            root.appendChild(editBtn);
+        }
+}
+
+const Grid = logoWebWrapper('vaadin-logo-grid');
+const GridColumn = logoWebWrapper('vaadin-grid-column');
+const GridSelection = logoWebWrapper('vaadin-grid-selection-column');
+
+function GridComp() {
+    fetchGridItems()
+    setTimeout(function(){
+        gridButtonAdder()
+    }, 3000);
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <h1>Row Stripes</h1>
+            <Grid theme="row-stripes" >
+                <GridColumn path="firstName" header="Ad"></GridColumn>
+                <GridColumn path="lastName" header="Soyad"></GridColumn>
+                <GridColumn path="email" header="E-Mail"></GridColumn>
+            </Grid>
+            <h1>Button Grid</h1>
+            <Grid id="buttonedGrid">
+                <GridColumn path="firstName" header="Ad"></GridColumn>
+                <GridColumn path="lastName" header="Soyad"></GridColumn>
+                <GridColumn path="email" header="E-Mail"></GridColumn>
+                <GridColumn path="email" header="Actions" id="gridActions" ></GridColumn>
+            </Grid>
+            <h1>Selection Grid</h1>
+            <Grid id="selectionGrid" >
+                <GridSelection></GridSelection>
+                <GridColumn path="firstName" header="Ad"></GridColumn>
+                <GridColumn path="lastName" header="Soyad"></GridColumn>
+                <GridColumn path="email" header="E-Mail"></GridColumn>
+            </Grid>
+        </div>
+    );
+}
+
+
+const GridPro = logoWebWrapper('vaadin-grid-pro');
+const GridProColumn = logoWebWrapper('vaadin-grid-pro-edit-column');
+
+function GridProComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <GridPro edit-on-click items={fetchGridItems()}>
+                <GridProColumn path="firstName"> </GridProColumn>
+                <GridProColumn path="lastName"> </GridProColumn>
+                <GridProColumn path="email"></GridProColumn>
+            </GridPro>
+        </div>
+
+    );
+}
+
+const HorizontalLayout = logoWebWrapper('vaadin-horizontal-layout');
+const LayoutItem = logoWebWrapper('layout-item');
+
+function HorizontalLayoutComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <HorizontalLayout theme="spacing padding">
+                <LayoutItem>Item 1</LayoutItem>
+                <LayoutItem>Item 2</LayoutItem>
+                <LayoutItem>Item 3</LayoutItem>
+                <LayoutItem>Item 4</LayoutItem>
+            </HorizontalLayout>
+        </div>
+
+    );
+}
+
+const Icon = logoWebWrapper('logo-elements-icon');
+
+function IconComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <Icon icon="lumo:bell"></Icon>
+            <Icon icon="leds:alarm_bell_ring"></Icon>
+        </div>
+
+    );
+}
+
+const IntegerField = logoWebWrapper('logo-elements-integer-field');
+
+function IntegerFieldComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <IntegerField value="2" has-controls min="0" max="9"></IntegerField>
+        </div>
+
+    );
+}
+
+const Item = logoWebWrapper('logo-elements-item');
+
+function ItemComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <Item>item1</Item>
+            <Item>item2</Item>
+            <Item>item3</Item>
+        </div>
+
+    );
+}
+
+
+
+
+const ListBox = logoWebWrapper('logo-elements-list-box');
+
+function ListBoxComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <ListBox id="customContent">
+                <Item>
+                    <div>
+                        <Icon icon="leds:redo" style="margin-right: 8px"></Icon>
+                        <span>Recursive Task</span>
+                    </div>
+                </Item>
+                <Item>
+                    <div>
+                        <Icon icon="leds:touch_id_1" style="margin-right: 8px"></Icon>
+                        <span>Log Me In</span>
+                    </div>
+                </Item>
+                <Item>
+                    <div>
+                        <Icon icon="leds:move_expand_vertical" style="margin-right: 8px"></Icon>
+                        <span>Call the Elevator</span>
+                    </div>
+                </Item>
+            </ListBox>
+
+        </div>
+
+    );
+}
+
+const Login = logoWebWrapper('logo-elements-login-form');
+
+function LoginComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <Login no-autofocus></Login>
+        </div>
+
+    );
+}
+
+
+
+
+const MenuBar = logoWebWrapper('logo-elements-menu-bar');
+
+function MenuBarComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <MenuBar id="objects" label="Sort by" objects items ={ [
+                { text: 'View' },
+                { text: 'Edit' },
+                {
+                    text: 'Share',
+                    children: [
+                {
+                    text: 'On social media',
+                    children: [{ text: 'Facebook' }, { text: 'Twitter' }, { text: 'Instagram' }],
+                },
+                { text: 'By email' },
+                { text: 'Get link' },
+                    ],
+                },
+                {
+                    text: 'Move',
+                    children: [{ text: 'To folder' }, { text: 'To trash' }],
+                },
+                { text: 'Duplicate' },
+                ]}></MenuBar>
+        </div>
+
+    );
+}
+
+
+const MessageInput = logoWebWrapper('logo-elements-message-input');
+
+function MessageInputComp() {
+    return(
+        <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+            </ul>
+            <hr/>
+            <MessageInput></MessageInput>
+        </div>
+
+    );
+}
+
 root.render(<App/>);
