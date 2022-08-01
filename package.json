@@ -1,7 +1,7 @@
 {
   "name": "logo_elements_project_typescript",
   "version": "0.1.0",
-  "private": true,
+  "bin": "./bin/cli.js",
   "dependencies": {
     "@lit-labs/react": "^1.0.7",
     "@logo-elements/accordion": "^1.2.0",
