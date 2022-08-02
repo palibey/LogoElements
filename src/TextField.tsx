@@ -2,16 +2,12 @@ import {Link} from "react-router-dom";
 import {Icon} from "./Icon";
 import * as React from "react";
 import {TextField} from "./Scroller";
+import {Header} from "./components/Header";
 
 export function TextFieldComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Text Field'}/>
             <TextField label="Street Address" value="Ruukinkatu 2" clear-button-visible>
                 <Icon icon="leds:pin_2" slot="prefix"></Icon>
             </TextField>

@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/combo-box';
+import {Header} from "./components/Header";
 
 const ComboBox = logoWebWrapper('logo-elements-combo-box');
 
@@ -23,12 +24,7 @@ export function ComboBoxComp() {
     })
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Combo Box'}/>
             <ComboBox id='comb' label="İrsaliye" placeholder="Please select"
                       item-value-path="email" item-label-path="email"></ComboBox>
         </div>

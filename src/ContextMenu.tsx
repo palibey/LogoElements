@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/context-menu/logo-elements-context-menu';
+import {Header} from "./components/Header";
 
 const ContextMenu = logoWebWrapper('logo-elements-context-menu');
 
@@ -35,12 +36,7 @@ export function ContextMenuComp() {
 
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Context Menu'}/>
             <ContextMenu id='context-menu' >Right Click Here</ContextMenu>
         </div>
     );

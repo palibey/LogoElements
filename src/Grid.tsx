@@ -4,6 +4,7 @@ import * as React from "react";
 import '@vaadin/vaadin-grid';
 import '@logo-elements/grid';
 import '@vaadin/vaadin-grid/vaadin-grid-selection-column';
+import {Header} from "./components/Header";
 
 
 const Grid = logoWebWrapper('vaadin-logo-grid');
@@ -34,12 +35,7 @@ export function GridComp() {
     })
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Grid'}/>
             <h1>Row Stripes</h1>
             <Grid theme="row-stripes">
                 <GridColumn path="firstName" header="Ad"></GridColumn>

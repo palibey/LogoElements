@@ -4,18 +4,14 @@ import {Item} from "./Item";
 import {Icon} from "./Icon";
 import * as React from "react";
 import '@logo-elements/list-box';
+import {Header} from "./components/Header";
 
 const ListBox = logoWebWrapper('logo-elements-list-box');
 
 export function ListBoxComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'List Box'}/>
             <ListBox id="customContent">
                 <Item>
                     <div>

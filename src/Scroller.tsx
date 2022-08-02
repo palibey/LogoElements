@@ -6,6 +6,7 @@ import * as React from "react";
 import '@logo-elements/scroller';
 import '@logo-elements/text-field';
 import '@logo-elements/text-area';
+import {Header} from "./components/Header";
 
 const Scroller = logoWebWrapper('logo-elements-scroller');
 export const TextField = logoWebWrapper('logo-elements-text-field');
@@ -15,12 +16,7 @@ export const TextArea = logoWebWrapper('logo-elements-text-area');
 export function ScrollerComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Scroller'}/>
             <Scroller scroll-direction="vertical">
                 <VerticalLayout style="height: 200px;align-items: stretch;">
                     <section aria-labelledby="personal-title">

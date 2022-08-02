@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/multiselect';
+import {Header} from "./components/Header";
 
 const Multiselect = logoWebWrapper('logo-elements-multiselect');
 
@@ -48,12 +49,7 @@ export function MultiselectComp() {
 
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Multiselect'}/>
             <Multiselect id="basic" label="Element" placeholder="Select one or more"></Multiselect>
         </div>
 

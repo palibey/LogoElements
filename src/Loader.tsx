@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/loader';
+import {Header} from "./components/Header";
 
 const Loader = logoWebWrapper('logo-elements-loader');
 
@@ -16,12 +17,7 @@ export function LoaderComp() {
     });
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Loader'}/>
             <Loader></Loader>
 
         </div>

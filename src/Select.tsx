@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/select';
+import {Header} from "./components/Header";
 
 const Select = logoWebWrapper('logo-elements-select');
 
@@ -35,12 +36,7 @@ export function SelectComp() {
     });
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Select'}/>
             <Select id="objects" label="Sort by" objects></Select>
         </div>
 

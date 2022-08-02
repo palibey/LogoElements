@@ -2,16 +2,12 @@ import {Link} from "react-router-dom";
 import {VerticalLayout} from "./Details";
 import {LayoutItem} from "./HorizontalLayout";
 import * as React from "react";
+import {Header} from "./components/Header";
 
 export function VerticalLayoutComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Vertical Layout'}/>
             <VerticalLayout theme="spacing padding">
                 <LayoutItem>Item 1</LayoutItem>
                 <LayoutItem>Item 2</LayoutItem>

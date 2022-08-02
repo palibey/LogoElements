@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {Icon} from "./Icon";
 import * as React from "react";
 import '@logo-elements/tabs';
+import {Header} from "./components/Header";
 
 const Tabs = logoWebWrapper('logo-elements-tabs');
 const Tab = logoWebWrapper('logo-elements-tab');
@@ -10,12 +11,7 @@ const Tab = logoWebWrapper('logo-elements-tab');
 export function TabsComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Tabs'}/>
             <Tabs selected="3">
                 <Tab>Page 1</Tab>
                 <Tab>Page 2</Tab>

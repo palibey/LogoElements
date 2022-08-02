@@ -3,18 +3,14 @@ import {Link} from "react-router-dom";
 import {Button} from "./Button";
 import * as React from "react";
 import '@logo-elements/notification';
+import {Header} from "./components/Header";
 
 const Notification = logoWebWrapper('logo-elements-notification');
 
 export function NotificationComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Notification'}/>
             <Notification id="topScretch" position="top-stretch" theme="success"></Notification>
             <Notification id="topLeft" position="top-start" theme="error"></Notification>
             <Notification id="topCenter" position="top-center" theme="contrast"></Notification>

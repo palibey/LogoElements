@@ -1,8 +1,8 @@
 import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/accordion';
+import {Header} from "./components/Header";
 
 const Accordion = logoWebWrapper('logo-elements-accordion');
 const AccordionPanel = logoWebWrapper('logo-elements-accordion-panel');
@@ -32,12 +32,7 @@ export function AccordionComp() {
     }
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Accordion'}/>
             <Accordion id='accordion' opened-changed={() => setOpened(ReturnOpened())}>
                 {elements}
             </Accordion>

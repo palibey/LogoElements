@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/tooltip';
+import {Header} from "./components/Header";
 
 const Tooltip = logoWebWrapper('logo-elements-tooltip');
 
@@ -9,12 +10,7 @@ export function TooltipComp() {
 
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Tooltip'}/>
             <div>
                 <div id="needsTooltip">Get Over Me!</div>
                 <div id="needsTooltip2" >Get Over 2 Me!</div>

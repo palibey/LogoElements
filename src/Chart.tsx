@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/charts/logo-elements-charts.js';
 import '@logo-elements/charts/logo-elements-series.js';
+import {Header} from "./components/Header";
 
 const Chart = logoWebWrapper('logo-elements-chart');
 const ChartSeries = logoWebWrapper('logo-elements-chart-series');
@@ -10,12 +11,7 @@ const ChartSeries = logoWebWrapper('logo-elements-chart-series');
 export function ChartComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Chart'}/>
             <Chart title="The chart title" subtitle="The chart subtitle">
                 <ChartSeries
                     type="pie"

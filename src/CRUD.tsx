@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/crud/logo-elements-crud';
+import {Header} from "./components/Header";
 
 const CRUD = logoWebWrapper('logo-elements-crud');
 
@@ -26,12 +27,7 @@ export function CRUDComp() {
     })
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'CRUD'}/>
             <CRUD></CRUD>
         </div>
 

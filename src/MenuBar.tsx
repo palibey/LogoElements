@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/menu-bar';
+import {Header} from "./components/Header";
 
 const MenuBar = logoWebWrapper('logo-elements-menu-bar');
 
@@ -32,12 +33,7 @@ export function MenuBarComp() {
     })
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Menu Bar'}/>
             <MenuBar id="objects" label="Sort by" objects items={[
                 {text: 'View'},
                 {text: 'Edit'},

@@ -2,18 +2,14 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/pagination';
+import {Header} from "./components/Header";
 
 const Pagination = logoWebWrapper('logo-elements-pagination');
 
 export function PaginationComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Pagination'}/>
             <div>
                 <Pagination total-items="3" item-per-page="10"></Pagination>
             </div>

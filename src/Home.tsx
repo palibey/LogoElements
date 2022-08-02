@@ -3,8 +3,8 @@ import * as React from "react";
 
 export function Home() {
     return (
-        <div>
-            <h1>Welcome to the logo elements test home page</h1>
+        <div className='home-container'>
+            <h1 className='title'>Welcome to the logo elements test home page</h1>
             <ol>
                 <li>
                     <Link to='/accordion'>Accordion</Link>

@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/tags-list';
+import {Header} from "./components/Header";
 
 const TagsList = logoWebWrapper('logo-elements-tags-list');
 
@@ -30,12 +31,7 @@ export function TagsListComp() {
 
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Tag List'}/>
             <TagsList id="tagList"></TagsList>
         </div>
 

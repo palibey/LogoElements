@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/vertical-layout';
 import '@logo-elements/details';
+import {Header} from "./components/Header";
 
 const Details = logoWebWrapper('logo-elements-details');
 export const VerticalLayout = logoWebWrapper('logo-elements-vertical-layout');
@@ -10,12 +11,7 @@ export const VerticalLayout = logoWebWrapper('logo-elements-vertical-layout');
 export function DetailsComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Details'}/>
             <Details opened>
                 <div slot="summary">Contact information</div>
                 <VerticalLayout>

@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@vaadin/vaadin-grid-pro';
+import {Header} from "./components/Header";
 
 const GridPro = logoWebWrapper('vaadin-grid-pro');
 const GridProColumn = logoWebWrapper('vaadin-grid-pro-edit-column');
@@ -18,12 +19,7 @@ export function GridProComp() {
     });
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Grid Pro'}/>
             <GridPro edit-on-click>
                 <GridProColumn path="firstName"> </GridProColumn>
                 <GridProColumn path="lastName"> </GridProColumn>

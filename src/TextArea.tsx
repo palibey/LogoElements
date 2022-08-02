@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import * as React from "react";
 import {TextArea} from "./Scroller";
+import {Header} from "./components/Header";
 
 export function TextAreaComp() {
     const charLimit = 140;
@@ -17,12 +18,7 @@ export function TextAreaComp() {
     });
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Text Area'}/>
             <TextArea id="objects" label="Comment"></TextArea>
         </div>
 

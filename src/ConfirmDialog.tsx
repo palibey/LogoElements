@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {Button} from "./Button";
 import * as React from "react";
 import '@logo-elements/confirm-dialog';
+import {Header} from "./components/Header";
 
 const ConfirmDialog = logoWebWrapper('logo-elements-confirm-dialog');
 
@@ -16,11 +17,7 @@ function openConfirm() {
 export function ConfirmDialogComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
+            <Header value={'Confirm Dialog'}/>
             <Button onclick={() => openConfirm()}>
                 Open confirm dialog
             </Button>

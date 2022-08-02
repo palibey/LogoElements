@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {Button} from "./Button";
 import * as React from "react";
 import '@logo-elements/dialog'
+import {Header} from "./components/Header";
 
 function openDialog() {
     const theDialog = document.querySelector('logo-elements-dialog');
@@ -19,12 +20,7 @@ const Dialog = logoWebWrapper('logo-elements-dialog');
 export function DialogComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Dialog'}/>
             <Dialog id='dialog' resizeable={true} draggable={true}></Dialog>
             <Button onclick={() => openDialog()}>Show dialog</Button>
         </div>

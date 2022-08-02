@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/sortable';
+import {Header} from "./components/Header";
 
 const Sortable = logoWebWrapper('logo-elements-sortable');
 
@@ -20,12 +21,7 @@ export function SortableComp() {
     })
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Sortable'}/>
             <Sortable sortable>
                 <ul className="contains-sortable-list">
                     <li className="sortable-list-item">

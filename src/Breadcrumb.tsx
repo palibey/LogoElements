@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/breadcrumb';
+import {Header} from "./components/Header";
 
 const Breadcrumb = logoWebWrapper('logo-elements-breadcrumb');
 
@@ -16,14 +17,8 @@ export function BreadcrumbComp() {
     })
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Breadcrumb'}/>
             <Breadcrumb></Breadcrumb>
-
         </div>
 
     );

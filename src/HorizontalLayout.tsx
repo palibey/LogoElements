@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/horizontal-layout';
+import {Header} from "./components/Header";
 
 export const HorizontalLayout = logoWebWrapper('vaadin-horizontal-layout');
 export const LayoutItem = logoWebWrapper('layout-item');
@@ -9,12 +10,7 @@ export const LayoutItem = logoWebWrapper('layout-item');
 export function HorizontalLayoutComp() {
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
-            <hr/>
+            <Header value={'Horizontal Layout'}/>
             <HorizontalLayout theme="spacing padding">
                 <LayoutItem>Item 1</LayoutItem>
                 <LayoutItem>Item 2</LayoutItem>
