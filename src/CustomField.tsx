@@ -1,5 +1,4 @@
 import {logoWebWrapper} from "@logo-react/web-wrapper";
-import {Link} from "react-router-dom";
 import * as React from "react";
 import '@logo-elements/custom-field';
 import '@logo-elements/date-picker';

@@ -1,5 +1,4 @@
 import {logoWebWrapper} from "@logo-react/web-wrapper";
-import {Link} from "react-router-dom";
 import {VerticalLayout} from "./Details";
 import {DatePicker} from "./CustomField";
 import * as React from "react";

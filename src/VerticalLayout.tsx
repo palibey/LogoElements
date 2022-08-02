@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import {VerticalLayout} from "./Details";
 import {LayoutItem} from "./HorizontalLayout";
 import * as React from "react";

@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import {Icon} from "./Icon";
 import * as React from "react";
 import {TextField} from "./Scroller";

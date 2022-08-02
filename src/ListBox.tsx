@@ -1,5 +1,4 @@
 import {logoWebWrapper} from "@logo-react/web-wrapper";
-import {Link} from "react-router-dom";
 import {Item} from "./Item";
 import {Icon} from "./Icon";
 import * as React from "react";

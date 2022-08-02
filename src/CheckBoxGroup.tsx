@@ -1,5 +1,4 @@
 import {logoWebWrapper} from "@logo-react/web-wrapper";
-import {Link} from "react-router-dom";
 import * as React from "react";
 import {CheckBox} from "./CheckBox";
 import '@logo-elements/checkbox-group';

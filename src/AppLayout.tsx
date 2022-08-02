@@ -4,7 +4,6 @@ import '@logo-elements/app-layout';
 import '@logo-elements/app-layout/logo-elements-drawer-toggle.js';
 import '@logo-elements/icon';
 import '@logo-elements/tabs';
-import {Header} from "./components/Header";
 
 const AppLayout = logoWebWrapper('logo-elements-app-layout');
 const AppToggle = logoWebWrapper('logo-elements-drawer-toggle');
