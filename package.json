@@ -30,6 +30,7 @@
     "@logo-elements/icon": "^1.2.0",
     "@logo-elements/integer-field": "^1.2.0",
     "@logo-elements/item": "^1.2.1",
+    "@logo-elements/leds": "^1.2.8",
     "@logo-elements/list-box": "^1.2.0",
     "@logo-elements/loader": "^1.2.3",
     "@logo-elements/login": "^1.2.0",
