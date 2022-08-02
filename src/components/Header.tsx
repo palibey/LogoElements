@@ -1,14 +1,15 @@
 import {Link} from "react-router-dom";
 import * as React from "react";
+import '../assets/style.css'
+
+const logo =  require("../images/Home.png");
 
 export function Header(props) {
-    return(
+    return (
         <div className='page-header'>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-            </ul>
+            <Link to="/">
+                <img className='return-image' src={logo}/>
+            </Link>
             <hr/>
             <h1>{props.value} React Component</h1>
         </div>

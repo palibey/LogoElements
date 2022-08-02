@@ -4,11 +4,29 @@ html, body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-.home-container {
+    align-content: center;
     margin: 20px;
 }
 
-.title{
-    color: darkblue;
+.home-container {
+    color: black;
 }
+
+.title{
+    color: black;
+    width: 100vw;
+}
+
+.return-image{
+    height: 25px;
+    width: 25px;
+}
+
+.list-container{
+    display: flex;
+}
+
+.list{
+    padding-right: 100px;
+}
+

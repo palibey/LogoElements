@@ -2,6 +2,7 @@ import {logoWebWrapper} from "@logo-react/web-wrapper";
 import {Link} from "react-router-dom";
 import * as React from "react";
 import '@vaadin/vaadin-grid-pro';
+import '@vaadin/vaadin-grid-pro/vaadin-grid-pro-edit-column.js'
 import {Header} from "./components/Header";
 
 const GridPro = logoWebWrapper('vaadin-grid-pro');
