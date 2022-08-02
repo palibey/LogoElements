@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 import * as React from "react";
 import '@vaadin/vaadin-grid';
 import '@logo-elements/grid';
+import '@vaadin/vaadin-grid/vaadin-grid-selection-column';
+
 
 const Grid = logoWebWrapper('vaadin-logo-grid');
 const GridColumn = logoWebWrapper('vaadin-grid-column');
@@ -17,6 +19,7 @@ export function GridComp() {
                 for (let i = 0; i < grid.length; i++) {
                     if (grid[i] != null){
                         grid[i]['items'] = json.result;
+                        console.log(grid[i].id);
                     }
                 }
             });
