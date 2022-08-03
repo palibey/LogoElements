@@ -19,7 +19,6 @@ export function GridComp() {
                 for (let i = 0; i < grid.length; i++) {
                     if (grid[i] != null){
                         grid[i]['items'] = json.result;
-                        console.log(grid[i].id);
                     }
                 }
             });
