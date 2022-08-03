@@ -8,7 +8,7 @@ you need to run the following commands\
 npx logo_elements_project_typescript your_own_packet\
 then you need to wait for the installation\
 then you need to type\
-cd your_own_packet && npm install\
+cd your_own_packet && npm install
 
 
 ## Available Scripts
