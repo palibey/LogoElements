@@ -5,10 +5,14 @@ You can check the [Logo Elements Documentation Page](http://elements.logo.com.tr
 
 ## How To Start The Project
 you need to run the following commands\
-npx logo_elements_project_typescript your_own_packet\
+```sh
+npx create-logo-elements-project your_own_project_name
+```
 then you need to wait for the installation\
 then you need to type\
-cd your_own_packet && npm install
+```sh
+cd your_own_project_name && npm install
+```
 
 
 ## Available Scripts
