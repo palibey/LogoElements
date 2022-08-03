@@ -11,7 +11,7 @@ export function Header(props) {
                 <img className='return-image' src={logo}/>
             </Link>
             <hr/>
-            <h1>{props.value} React Component</h1>
+            <h1>{props.value} In React</h1>
         </div>
     );
 }
