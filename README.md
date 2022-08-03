@@ -3,7 +3,7 @@
 This project is a test app for logo elements in react.\
 You can check the [Logo Elements Documentation Page](http://elements.logo.com.tr/docs/getstarted) For more information
 
-## How To Start the project
+## How To Start The Project
 you need to run the following commands\
 npx logo_elements_project_typescript your_own_packet\
 then you need to wait for the installation\
